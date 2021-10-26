@@ -1,0 +1,15 @@
+br\edu\infnet\ecommerce\model\teste\ProdutoTeste.class
+br\edu\infnet\ecommerce\model\domain\Venda.class
+br\edu\infnet\ecommerce\model\teste\ArquivoTeste.class
+br\edu\infnet\ecommerce\model\domain\Brinco.class
+br\edu\infnet\ecommerce\controller\ClienteController.class
+br\edu\infnet\ecommerce\model\domain\Cliente.class
+br\edu\infnet\ecommerce\model\domain\Colar.class
+br\edu\infnet\ecommerce\model\domain\Produto.class
+br\edu\infnet\ecommerce\model\exceptions\PublicoInvalidoException.class
+br\edu\infnet\ecommerce\EcommerceApplication.class
+br\edu\infnet\ecommerce\model\teste\VendaTeste.class
+br\edu\infnet\ecommerce\model\domain\Anel.class
+br\edu\infnet\ecommerce\model\exceptions\MaterialNullException.class
+br\edu\infnet\ecommerce\model\exceptions\comprimentoInvalidoException.class
+br\edu\infnet\ecommerce\model\teste\ClienteTeste.class
