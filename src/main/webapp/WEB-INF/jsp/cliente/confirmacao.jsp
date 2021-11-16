@@ -9,8 +9,8 @@
 </head>
 <body>
    <div class="container">
-	   <form action="/cliente">
-	      <h3>Cliente cadastrado com sucesso!</h3>
+	   <form action="/clientes" method="get">
+	      <h3>Cliente ${nome} cadastrado com sucesso!</h3>
 	      <button type="submit" class="btn btn-primary">Voltar</button>
 	   </form>
 	</div>

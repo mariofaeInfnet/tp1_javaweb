@@ -1,6 +1,8 @@
 br\edu\infnet\ecommerce\model\teste\ProdutoTeste.class
 br\edu\infnet\ecommerce\model\domain\Venda.class
 br\edu\infnet\ecommerce\model\teste\ArquivoTeste.class
+br\edu\infnet\ecommerce\model\service\ClienteService.class
+br\edu\infnet\ecommerce\controller\AcessoController.class
 br\edu\infnet\ecommerce\model\domain\Brinco.class
 br\edu\infnet\ecommerce\controller\ClienteController.class
 br\edu\infnet\ecommerce\model\domain\Cliente.class
