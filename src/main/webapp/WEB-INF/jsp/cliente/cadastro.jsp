@@ -4,14 +4,15 @@
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
+<title>Cadastro de Clientes</title>
   <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"></head>
 <body>
+	<h1>CADASTRO DE CLIENTES</h1>
    <div class="container">
       <form action="/cliente/incluir" method="post">
 	      <div class="form-group">
 	        <label>Nome:</label>
-	        <input type="text" value="José Mario Alves Faé" class="form-control" placeholder="Entre com o seu nome" name="nome">
+	        <input type="text" value="Jose Mario Alves Fae" class="form-control" placeholder="Entre com o seu nome" name="nome">
 	      </div>
 	      <div class="form-group">
 	        <label>E-mail:</label>

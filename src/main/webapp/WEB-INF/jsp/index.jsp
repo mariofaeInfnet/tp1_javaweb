@@ -9,10 +9,10 @@
 <body>
    <div class="container">
 
-		<h3>José Mario Alves Faé</h3>
+		<h3>Usuario Autenticado com Sucesso</h3>
 		
 		<h4>Cadastramento de <a href="/cliente">clientes</a></h4>
 
    </div>
 </body>
-</html>  
+</html>

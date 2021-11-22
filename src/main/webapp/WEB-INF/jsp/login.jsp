@@ -10,7 +10,7 @@
 </head>
 <body>
 	<div class="container">
-		<h2>Cadastramento de Clientes</h2>
+		<h2>Autenticação</h2>
 		
 		<c:if test="${not empty msg}">
 			<div class="alert alert-warning">
@@ -21,12 +21,12 @@
 		<form action="/login" method="post">
 			<div class="form-group">
 			  <label>Email:</label>
-			  <input type="email" value="jose@gmail.com" class="form-control" placeholder="Entre com o e-mail" name="email">
+			  <input type="email" value="jose@hotmail.com" class="form-control" placeholder="Entre com o e-mail" name="email">
 			</div>
 			
 			<div class="form-group">
 			  <label>Senha:</label>
-			  <input type="password" value="jose@gmail.com" class="form-control" placeholder="Entre com a senha" name="senha">
+			  <input type="password" value="123" class="form-control" placeholder="Entre com a senha" name="senha">
 			</div>
 			
 			<button type="submit" class="btn btn-primary">Acessar</button>
