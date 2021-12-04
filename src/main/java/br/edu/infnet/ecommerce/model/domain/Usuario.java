@@ -1,13 +1,17 @@
 package br.edu.infnet.ecommerce.model.domain;
 
+import java.util.List;
+
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "TUsuario")
+@Table(name = "tUsuario")
 public class Usuario {
 	
 	@Id
@@ -16,6 +20,9 @@ public class Usuario {
 	private String nome;
 	private String email;
 	private String senha;
+	@OneToMany
+	@JoinColumn(name="idUsuario")
+	private List<Cliente> clientes;
 		
 	public Integer getId() {
 		return id;
@@ -41,7 +48,12 @@ public class Usuario {
 	public void setSenha(String senha) {
 		this.senha = senha;
 	}
+	public List<Cliente> getClientes() {
+		return clientes;
+	}
+	public void setClientes(List<Cliente> clientes) {
+		this.clientes = clientes;
+	}
 	
-
 
 }

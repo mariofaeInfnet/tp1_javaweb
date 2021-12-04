@@ -9,6 +9,7 @@ br\edu\infnet\ecommerce\model\domain\Brinco.class
 br\edu\infnet\ecommerce\model\domain\Cliente.class
 br\edu\infnet\ecommerce\model\domain\Colar.class
 br\edu\infnet\ecommerce\model\domain\Produto.class
+br\edu\infnet\ecommerce\controller\UsuarioController.class
 br\edu\infnet\ecommerce\model\exceptions\PublicoInvalidoException.class
 br\edu\infnet\ecommerce\model\service\UsuarioService.class
 br\edu\infnet\ecommerce\model\domain\Anel.class

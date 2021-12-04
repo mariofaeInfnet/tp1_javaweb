@@ -5,26 +5,24 @@
 <!DOCTYPE html>
 <html>
 <head>
-<meta charset="ISO-8859-1">
-<title>listagem clientes</title>
-<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+	<meta charset="ISO-8859-1">
+	<title>listagem clientes</title>
+	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
+	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 <body>
-<%-- 	<c:import url="/WEB-INF/jsp/menu.jsp"/> --%>
+	<c:import url="/WEB-INF/jsp/menu.jsp"/>
 
 	<div class="container">	
-		
+		<br>
 		<a href="/cliente">Novo cliente</a>
-	
 		<hr>
-		
 		<c:if test="${not empty nome}">
 			<div class="alert alert-success">
 				 <strong>OK, </strong> Cliente ${nome} cadastrado com sucesso!
 			</div>
 		</c:if>
-		
+			
 		<c:if test="${not empty listaClientes}">
 		
 			<h4>Listagem de clientes (${listaClientes.size()}):</h4>		
@@ -34,7 +32,8 @@
 			        <th>#</th>
 			        <th>Nome</th>
 			        <th>Email</th>
-			        <th></th>
+			        <th>Usuário</th>
+			       	<th></th>
 			      </tr>
 			    </thead>
 			    <tbody>
@@ -43,6 +42,7 @@
 				      	<td>${c.id}</td>
 				        <td>${c.nome}</td>
 				        <td>${c.email}</td>
+				        <td>${c.usuario.nome}</td>
 				        <td><a href="/cliente/${c.id}/excluir">Excluir</a></td>
 				      </tr>
 			      </c:forEach>

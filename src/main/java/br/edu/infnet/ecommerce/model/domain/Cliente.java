@@ -4,10 +4,12 @@ import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.JoinColumn;
+import javax.persistence.ManyToOne;
 import javax.persistence.Table;
 
 @Entity
-@Table(name = "tUsuario") //utiliza-se caso queira usar uma tabela com um nome diferente da classe, por padrao sao iguais.
+@Table(name = "tCliente") //utiliza-se caso queira usar uma tabela com um nome diferente da classe, por padrao sao iguais.
 public class  Cliente {
 	
 	@Id
@@ -16,9 +18,12 @@ public class  Cliente {
 	private String nome;
 	private String senha;
 	private String email;
+	@ManyToOne
+	@JoinColumn(name="idUsuario")
+	private Usuario usuario;
 	
 	public Cliente() {
-		// para satisfazer uma condição do Spring
+		// exigido pelo Spring
 	}
 	public Cliente(String nome, String email, String senha) {
 		this.nome = nome;
@@ -62,6 +67,12 @@ public class  Cliente {
 	}
 	public void setId(Integer id) {
 		this.id = id;
+	}
+	public Usuario getUsuario() {
+		return usuario;
+	}
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 	
 

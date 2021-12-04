@@ -1,17 +1,17 @@
+ <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c" %>
  <%@ page language="java" contentType="text/html; charset=ISO-8859-1"
     pageEncoding="ISO-8859-1"%>
 <!DOCTYPE html>
 <html>
 <head>
 <meta charset="ISO-8859-1">
-<title>Insert title here</title>
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"></head>
+<title>luciana joias</title>
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css"></head>
 <body>
-   <div class="container">
 
-		<h3>Usuario Autenticado com Sucesso</h3>
-		
-		<h4>Cadastramento de <a href="/cliente">clientes</a></h4>
+	<c:import url="/WEB-INF/jsp/menu.jsp"/>
+
+   <div class="container">
 
    </div>
 </body>

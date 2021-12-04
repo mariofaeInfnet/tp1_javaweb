@@ -6,8 +6,10 @@ import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
+import org.springframework.web.bind.annotation.SessionAttribute;
 
 import br.edu.infnet.ecommerce.model.domain.Cliente;
+import br.edu.infnet.ecommerce.model.domain.Usuario;
 import br.edu.infnet.ecommerce.model.service.ClienteService;
 
 @Controller
@@ -22,23 +24,25 @@ public class ClienteController {
 	}
 	
 	@GetMapping(value = "/clientes")
-	public String telaLista(Model model) {
+	public String telaLista(Model model, @SessionAttribute("user") Usuario usuario) {
 		
-		model.addAttribute("listaClientes", clienteService.obterLista());
+		model.addAttribute("listaClientes", clienteService.obterLista(usuario));
 		
 		return "cliente/lista";
 	}
 	
 	@PostMapping(value = "/cliente/incluir")
-	public String incluir(Model	model, Cliente cliente) {
+	public String incluir(Model	model, Cliente cliente, @SessionAttribute("user") Usuario usuario) {
+		
+		cliente.setUsuario(usuario);
 		
 		clienteService.incluir(cliente);
-		System.out.println("A inclusao do "+ cliente.getNome() +" foi realizada com sucesso!!!");
 		
 		model.addAttribute("nome", cliente.getNome());
-
 		
-		return "cliente/confirmacao";
+//		model.addAttribute("listaClientes", clienteService.obterLista());
+		
+		return telaLista(model, usuario);
 	}
 	
 	@GetMapping(value = "/cliente/{id}/excluir")
