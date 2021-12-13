@@ -32,7 +32,9 @@
 			        <th>Nome</th>
 			        <th>Email</th>
 			        <th>Clientes</th>
+			        <c:if test="${usuario.admin}">
 			       	<th></th>
+			       	</c:if>
 			      </tr>
 			    </thead>
 			    <tbody>
@@ -42,7 +44,9 @@
 				        <td>${u.nome}</td>
 				        <td>${u.email}</td>
 				        <td>${u.clientes.size()}</td>
+				        <c:if test="${usuario.admin}">
 				        <td><a href="/usuario/${u.id}/excluir">Excluir</a></td>
+				        </c:if>
 				      </tr>
 			      </c:forEach>
 			    </tbody>

@@ -2,12 +2,14 @@ package br.edu.infnet.ecommerce.model.domain;
 
 import java.util.List;
 
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
 import javax.persistence.OneToMany;
+import javax.persistence.OneToOne;
 import javax.persistence.Table;
 
 @Entity
@@ -20,7 +22,13 @@ public class Usuario {
 	private String nome;
 	private String email;
 	private String senha;
-	@OneToMany
+	private boolean admin;
+	
+	@OneToOne(cascade = CascadeType.PERSIST) // PERSIST eh utilizado quando se cadastra duas entidades ao mesmo tempo (Usuario x Endereco)
+	@JoinColumn(name = "idendereco")
+	private Endereco endereco;
+	
+	@OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
 	@JoinColumn(name="idUsuario")
 	private List<Cliente> clientes;
 		
@@ -53,6 +61,18 @@ public class Usuario {
 	}
 	public void setClientes(List<Cliente> clientes) {
 		this.clientes = clientes;
+	}
+	public boolean isAdmin() {
+		return admin;
+	}
+	public void setAdmin(boolean admin) {
+		this.admin = admin;
+	}
+	public Endereco getEndereco() {
+		return endereco;
+	}
+	public void setEndereco(Endereco endereco) {
+		this.endereco = endereco;
 	}
 	
 

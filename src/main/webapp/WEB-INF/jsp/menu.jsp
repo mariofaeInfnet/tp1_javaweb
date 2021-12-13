@@ -11,9 +11,9 @@
 	      <li><a href="/clientes">Cliente</a></li>
 	      <li><a href="/usuarios">Usuário</a></li>
 	      <li><a href="#">Brincos</a></li>
-	      <li><a href="#">Anéis</a></li>
+	      <li><a href="/aneis">Anéis</a></li>
 	      <li><a href="#">Colares</a></li>
-	      <li><a href="#">Meus Pedidos</a></li>
+	      <li><a href="/pedidos">Meus Pedidos</a></li>
 	     </c:if>
 	     
 	    </ul>

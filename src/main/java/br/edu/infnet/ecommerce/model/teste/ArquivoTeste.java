@@ -13,7 +13,7 @@ import br.edu.infnet.ecommerce.model.domain.Brinco;
 import br.edu.infnet.ecommerce.model.domain.Cliente;
 import br.edu.infnet.ecommerce.model.domain.Colar;
 import br.edu.infnet.ecommerce.model.domain.Produto;
-import br.edu.infnet.ecommerce.model.domain.Venda;
+import br.edu.infnet.ecommerce.model.domain.Pedido;
 import br.edu.infnet.ecommerce.model.exceptions.MaterialNullException;
 import br.edu.infnet.ecommerce.model.exceptions.PublicoInvalidoException;
 import br.edu.infnet.ecommerce.model.exceptions.comprimentoInvalidoException;
@@ -43,7 +43,7 @@ public class ArquivoTeste {
 				linha = leitura.readLine();
 				
 				List<Produto> listaProdutos = new ArrayList<Produto>();
-				Venda venda1 = new Venda();
+				Pedido venda1 = new Pedido();
 
 				while(linha != null) {
 					
@@ -58,7 +58,6 @@ public class ArquivoTeste {
 						
 						venda1.setProtocolo(Integer.valueOf(indices[0]));
 						venda1.setCliente(cliente);
-						venda1.setValorTotal(Float.valueOf(indices[1]));
 							
 					} else {
 						switch (indices[0]) {

@@ -8,7 +8,7 @@ import br.edu.infnet.ecommerce.model.domain.Brinco;
 import br.edu.infnet.ecommerce.model.domain.Cliente;
 import br.edu.infnet.ecommerce.model.domain.Colar;
 import br.edu.infnet.ecommerce.model.domain.Produto;
-import br.edu.infnet.ecommerce.model.domain.Venda;
+import br.edu.infnet.ecommerce.model.domain.Pedido;
 import br.edu.infnet.ecommerce.model.exceptions.MaterialNullException;
 import br.edu.infnet.ecommerce.model.exceptions.PublicoInvalidoException;
 import br.edu.infnet.ecommerce.model.exceptions.comprimentoInvalidoException;
@@ -70,17 +70,15 @@ public class VendaTeste {
 		
 		
 		
-		Venda venda1 = new Venda();
+		Pedido venda1 = new Pedido();
 		venda1.setProtocolo(1001);
 		venda1.setCliente(cliente);
-		venda1.setValorTotal(300);
 		venda1.setProdutos(listaCompras1);
 		System.out.println(venda1);
 		
-		Venda venda2 = new Venda();
+		Pedido venda2 = new Pedido();
 		venda2.setProtocolo(1002);
 		venda2.setCliente(cliente);
-		venda2.setValorTotal(452);
 		venda2.setProdutos(listaCompras2);
 		System.out.println(venda2);
 		

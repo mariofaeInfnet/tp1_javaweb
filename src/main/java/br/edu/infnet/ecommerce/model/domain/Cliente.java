@@ -1,11 +1,16 @@
 package br.edu.infnet.ecommerce.model.domain;
 
+import java.util.List;
+
+import javax.persistence.CascadeType;
 import javax.persistence.Entity;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.JoinColumn;
+import javax.persistence.ManyToMany;
 import javax.persistence.ManyToOne;
+import javax.persistence.OneToMany;
 import javax.persistence.Table;
 
 @Entity
@@ -18,13 +23,18 @@ public class  Cliente {
 	private String nome;
 	private String senha;
 	private String email;
+	
 	@ManyToOne
 	@JoinColumn(name="idUsuario")
 	private Usuario usuario;
 	
+	@OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
+	@JoinColumn(name = "idCliente")//esse parametro cria uma coluna com este nome la na tabela pedido para armazenar as chaves primárias dos clientes.
+	private List<Pedido> pedidos;
+	
 	public Cliente() {
-		// exigido pelo Spring
 	}
+	
 	public Cliente(String nome, String email, String senha) {
 		this.nome = nome;
 		this.email = email;
@@ -73,6 +83,14 @@ public class  Cliente {
 	}
 	public void setUsuario(Usuario usuario) {
 		this.usuario = usuario;
+	}
+
+	public List<Pedido> getPedidos() {
+		return pedidos;
+	}
+
+	public void setPedidos(List<Pedido> pedidos) {
+		this.pedidos = pedidos;
 	}
 	
 
