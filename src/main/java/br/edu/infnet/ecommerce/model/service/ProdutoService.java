@@ -20,6 +20,8 @@ public class ProdutoService {
 		return (List<Produto>) produtoRepository.findAll(Sort.by(Sort.Direction.ASC, "descricao")); //usar a sugestão do eclipse "cast" para converter o tipo de coleção de iterable para list.
 	}	
 	
-	
+	public Produto obterPorId(Integer id) {
+		return produtoRepository.findById(id).orElse(null);
+	}
 
 }

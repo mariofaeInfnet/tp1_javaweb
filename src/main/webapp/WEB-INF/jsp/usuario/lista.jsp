@@ -7,7 +7,6 @@
 <head>
 	<meta charset="ISO-8859-1">
 	<title>listagem de usuarios</title>
-	<!-- <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css"> -->
 	 <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
 </head>
 <body>
@@ -45,7 +44,14 @@
 				        <td>${u.email}</td>
 				        <td>${u.clientes.size()}</td>
 				        <c:if test="${usuario.admin}">
-				        <td><a href="/usuario/${u.id}/excluir">Excluir</a></td>
+				        <td><a href="/usuario/${u.id}/excluir">
+				        <c:choose>
+				        <c:when test = "${user.id != u.id}">
+				        Excluir
+				        </c:when>
+				        </c:choose>
+				        </a>
+				        </td>
 				        </c:if>
 				      </tr>
 			      </c:forEach>

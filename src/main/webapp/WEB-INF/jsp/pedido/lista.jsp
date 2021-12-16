@@ -16,11 +16,11 @@
 		<br>
 		<a href="/pedido">Novo pedido</a>
 		<hr>
-		<c:if test="${not empty data}">
-			<div class="alert alert-success">
-				 <strong>Parabéns</strong>, seu Pedido foi registrado!
-			</div>
-		</c:if>
+<%-- 		<c:if test="${not empty data}"> --%>
+<!-- 			<div class="alert alert-success"> -->
+<!-- 				 <strong>Parabéns</strong>, seu Pedido foi registrado! -->
+<!-- 			</div> -->
+<%-- 		</c:if> --%>
 			
 		<c:if test="${not empty listaPedidos}">
 		
@@ -32,6 +32,7 @@
 			        <th>Data</th>
 			        <th>Cliente</th>
 			        <th>Observacao</th>
+			        <th>Qtde</th>
 			       	<th></th>
 			      </tr>
 			    </thead>
@@ -42,6 +43,7 @@
 				        <td>${p.data}</td>
 				        <td>${p.cliente}</td>
 				        <td>${p.observacao}</td>
+				        <td>${p.produtos.size()}</td>
 				        <td><a href="/pedido/${p.protocolo}/excluir">Cancelar</a></td>
 				      </tr>
 <!-- 				      vou criar outro for each aqui para listar os produtos de cada pedido -->

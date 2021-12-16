@@ -27,6 +27,26 @@ public class ClienteLoader implements ApplicationRunner {
 		cliente.setUsuario(usuario);
 		
 		clienteService.incluir(cliente);
+		//
+		
+		Cliente cliente2 = new Cliente("Joaquina de Assuncao", "joaquina@gmail.com", "123");
+		cliente2.setUsuario(usuario);
+		
+		clienteService.incluir(cliente2);
+		//
+		Usuario usuario2 = new Usuario();
+		usuario2.setId(2);
+		
+		Cliente cliente3 = new Cliente("Zoniaria dos Ventos", "zoniara@gmail.com", "123");
+		cliente3.setUsuario(usuario2);
+		
+		clienteService.incluir(cliente3);
+		//
+		
+		Cliente cliente4 = new Cliente("Alinina Natal", "alinina@gmail.com", "123");
+		cliente4.setUsuario(usuario2);
+		
+		clienteService.incluir(cliente4);
 	}
 
 }

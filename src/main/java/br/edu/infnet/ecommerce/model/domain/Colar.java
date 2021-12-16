@@ -1,13 +1,22 @@
 package br.edu.infnet.ecommerce.model.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 import br.edu.infnet.ecommerce.model.exceptions.comprimentoInvalidoException;
 
+@Entity
+@Table(name = "TColar")
 public class Colar extends Produto {
 	
 	private int comprimento;
 	private String pedra;
 	private boolean corrente;
 
+	public Colar() {
+
+	}
+	
 	public Colar(String descricao, boolean freteGratis, float precoVenda) {
 		super(descricao, freteGratis, precoVenda);
 	}

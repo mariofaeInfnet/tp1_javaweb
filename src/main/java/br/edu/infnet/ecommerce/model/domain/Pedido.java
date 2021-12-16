@@ -22,18 +22,24 @@ public class Pedido {
 	private Integer protocolo;
 	private LocalDateTime data;
 	private String observacao;
-	private boolean encerrado; 
+	private boolean encerrado;
+	
 	
 	@ManyToOne(cascade = CascadeType.DETACH) //DETACH associa uma venda a uma chave primaria de um cliente ja previamente cadastrado
-	@JoinColumn(name = "idCliente")
-	private Cliente cliente;
+	@JoinColumn(name = "idUsuario")
+	private Usuario usuario;
 	
 	//@Transient eh usado quando nao for necessario associar um atributo a uma tabela.
 	@ManyToMany(cascade = CascadeType.DETACH)
 	private List<Produto> produtos;
 	
+	@ManyToOne(cascade = CascadeType.DETACH) //DETACH associa uma venda a uma chave primaria de um cliente ja previamente cadastrado
+	@JoinColumn(name = "idCliente")
+	private Cliente cliente;
+	
 	public Pedido() {
 		data = LocalDateTime.now();
+		
 	}
 	
 //	@Override
@@ -72,12 +78,13 @@ public class Pedido {
 		this.data = data;
 	}
 
-	public Cliente getCliente() {
-		return cliente;
+
+	public Usuario getUsuario() {
+		return usuario;
 	}
 
-	public void setCliente(Cliente cliente) {
-		this.cliente = cliente;
+	public void setUsuario(Usuario usuario) {
+		this.usuario = usuario;
 	}
 
 	public List<Produto> getProdutos() {
@@ -103,6 +110,13 @@ public class Pedido {
 	public void setEncerrado(boolean encerrado) {
 		this.encerrado = encerrado;
 	}
-	
+
+	public Cliente getCliente() {
+		return cliente;
+	}
+
+	public void setCliente(Cliente cliente) {
+		this.cliente = cliente;
+	}
 
 }

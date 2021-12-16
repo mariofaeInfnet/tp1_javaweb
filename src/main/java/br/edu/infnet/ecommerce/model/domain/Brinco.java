@@ -1,13 +1,21 @@
 package br.edu.infnet.ecommerce.model.domain;
 
+import javax.persistence.Entity;
+import javax.persistence.Table;
+
 import br.edu.infnet.ecommerce.model.exceptions.MaterialNullException;
 
+@Entity
+@Table(name = "TBrinco")
 public class Brinco extends Produto {
 	
 	private String material; //ouro, prata, aco
 	private String estilo; //argola, stud, gota, cascata..
 	private String publico; //feminino, kids, baby
 
+	public Brinco() {
+	}
+	
 	public Brinco(String descricao, boolean freteGratis, float precoVenda) {
 		super(descricao, freteGratis, precoVenda);
 	}

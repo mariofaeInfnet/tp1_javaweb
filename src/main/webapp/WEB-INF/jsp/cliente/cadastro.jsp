@@ -20,7 +20,7 @@
 	      </div>
 	      <div class="form-group">
 	        <label>E-mail:</label>
-	        <input type="email" value="beltrano@gmail.comr" class="form-control" placeholder="Entre com o seu email" name="email">
+	        <input type="email" value="beltrano@gmail.com" class="form-control" placeholder="Entre com o seu email" name="email">
 	      </div>
 	      <div class="form-group">
 	        <label>Senha:</label>

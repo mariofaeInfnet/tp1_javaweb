@@ -6,8 +6,8 @@ import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.data.domain.Sort;
 import org.springframework.stereotype.Service;
 
+import br.edu.infnet.ecommerce.model.domain.Cliente;
 import br.edu.infnet.ecommerce.model.domain.Pedido;
-import br.edu.infnet.ecommerce.model.domain.Usuario;
 import br.edu.infnet.ecommerce.model.repository.PedidoRepository;
 
 @Service
@@ -21,9 +21,9 @@ public class PedidoService {
 		return (List<Pedido>)pedidoRepository.findAll();
 	}
 	
-	public List<Pedido> obterLista(Usuario usuario) {//traz somente os registros associados ao usuario logado
+	public List<Pedido> obterLista(Cliente cliente) {//traz somente os registros associados ao cliente logado
 		
-		return (List<Pedido>)pedidoRepository.findAll(usuario.getId(), Sort.by(Sort.Direction.ASC, "descricao"));
+		return (List<Pedido>)pedidoRepository.findAll(cliente.getId(), Sort.by(Sort.Direction.ASC, "data"));
 	}
 	
 	public void incluir(Pedido pedido) {

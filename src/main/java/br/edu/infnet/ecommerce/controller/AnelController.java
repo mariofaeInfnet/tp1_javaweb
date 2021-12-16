@@ -40,13 +40,17 @@ public class AnelController {
 	}
 
 	@GetMapping(value = "/anel/{id}/excluir")
-	public String excluir(@PathVariable Integer id) { // @Pathv. para o método entender que a variável "id" está vindo
+	public String excluir(@PathVariable Integer id, Model model) { // @Pathv. para o método entender que a variável "id" está vindo
 														// da rota informada acima.
-
-		// exclui um anel através de um id
-		anelService.excluir(id);
-
-		return "redirect:/aneis";
+		try {
+			anelService.excluir(id);
+			model.addAttribute("mensagem2", "Produto excluído com sucesso!");
+			
+		} catch (Exception e) {
+			model.addAttribute("mensagem", "Não é permitida a exclusão deste produto, pois existem pedidos associados a ele.");
+		}
+		
+		return this.telaLista(model);
 	}
 
 }

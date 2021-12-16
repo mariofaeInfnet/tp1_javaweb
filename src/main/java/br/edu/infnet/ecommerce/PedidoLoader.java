@@ -10,7 +10,8 @@ import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 import br.edu.infnet.ecommerce.model.domain.Anel;
-import br.edu.infnet.ecommerce.model.domain.Cliente;
+import br.edu.infnet.ecommerce.model.domain.Brinco;
+import br.edu.infnet.ecommerce.model.domain.Colar;
 import br.edu.infnet.ecommerce.model.domain.Pedido;
 import br.edu.infnet.ecommerce.model.domain.Produto;
 import br.edu.infnet.ecommerce.model.domain.Usuario;
@@ -31,20 +32,38 @@ public class PedidoLoader implements ApplicationRunner {
 			
 			Anel anel = new Anel();
 			anel.setId(1);
-			
-			Cliente cliente = new Cliente();
-			cliente.setId(1);
-			
+					
 			List<Produto> listaProdutos = new ArrayList<Produto>();
 			listaProdutos.add(anel);
 			
 			Pedido pedido = new Pedido();
-			pedido.setCliente(cliente);
+			pedido.setUsuario(usuario);
 			pedido.setProdutos(listaProdutos);
 			pedido.setObservacao("favor embalar para presente");
 			pedido.setEncerrado(true);
 			
 			pedidoService.incluir(pedido);
+			
+			////
+			usuario.setId(2);
+			
+			Brinco brinco = new Brinco();
+			brinco.setId(1);
+			Colar colar = new Colar();
+			colar.setId(1);
+			
+			List<Produto> listaProdutos2 = new ArrayList<Produto>();
+			listaProdutos2.add(brinco);
+			listaProdutos2.add(colar);
+			
+			Pedido pedido2 = new Pedido();
+			pedido2.setUsuario(usuario);
+			pedido2.setProdutos(listaProdutos2);
+			pedido2.setObservacao("favor embalar para presente");
+			pedido2.setEncerrado(true);
+			
+			pedidoService.incluir(pedido2);
+
 
 	}
 

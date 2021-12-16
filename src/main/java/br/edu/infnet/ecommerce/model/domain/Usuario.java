@@ -31,6 +31,11 @@ public class Usuario {
 	@OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
 	@JoinColumn(name="idUsuario")
 	private List<Cliente> clientes;
+	
+	@OneToMany(cascade = CascadeType.REMOVE, orphanRemoval = true)
+	@JoinColumn(name = "idUsuario") // esse parametro cria uma coluna com este nome la na tabela pedido para
+	private List<Pedido> pedidos;   // armazenar as chaves primárias dos clientes.
+	
 		
 	public Integer getId() {
 		return id;
@@ -67,6 +72,12 @@ public class Usuario {
 	}
 	public void setAdmin(boolean admin) {
 		this.admin = admin;
+	}
+	public List<Pedido> getPedidos() {
+		return pedidos;
+	}
+	public void setPedidos(List<Pedido> pedidos) {
+		this.pedidos = pedidos;
 	}
 	public Endereco getEndereco() {
 		return endereco;

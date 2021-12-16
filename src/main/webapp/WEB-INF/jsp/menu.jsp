@@ -2,18 +2,18 @@
 	<nav class="navbar navbar-inverse">
 	  <div class="container-fluid">
 	    <div class="navbar-header">
-	      <a class="navbar-brand" href="#">Luciana Jóias</a>
+	      <a class="navbar-brand" href="#"><img alt="Brand" src="C:\Users\jmafa\Pictures\logo-para-joalheria.jpg"></a>
 	    </div>
 	    <ul class="nav navbar-nav">
 	      <li class="active"><a href="#">Home</a></li>
 	      
 	     <c:if test="${not empty user}">
-	      <li><a href="/clientes">Cliente</a></li>
-	      <li><a href="/usuarios">Usuário</a></li>
-	      <li><a href="#">Brincos</a></li>
+	      <li><a href="/clientes">Clientes</a></li>
+	      <li><a href="/usuarios">Usuários</a></li>
+	      <li><a href="/brincos">Brincos</a></li>
 	      <li><a href="/aneis">Anéis</a></li>
-	      <li><a href="#">Colares</a></li>
-	      <li><a href="/pedidos">Meus Pedidos</a></li>
+	      <li><a href="/colares">Colares</a></li>
+	      <li><a href="/pedidos">Pedidos</a></li>
 	     </c:if>
 	     
 	    </ul>
